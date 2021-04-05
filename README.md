@@ -1,2 +1,4 @@
-# stats531misc
-Stats 531 Misc
+# Stats 531
+
+Zhilin He
+For the Stats 531 course
