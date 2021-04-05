@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#SBATCH --job-name=hw72
+#SBATCH --mail-user=zhilinhe@umich.edu
+#SBATCH --mail-type=BEGIN,END,FAIL
+ 
+#SBATCH --account=stats531w21_class
+#SBATCH --partition=standard
+
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#SBATCH --cpus-per-task=1
+
+## 5GB/cpu is the basic share
+#SBATCH --mem-per-cpu=1GB
+
+## wall time hours:minutes:seconds
+#SBATCH --time=1:00:00
+
+###   Load software modules
+
+module load R/4.0.3
+module list
+
+####  Commands your job should run follow this line
+
+echo "Running on $SLURM_JOB_NODELIST"
+echo "Running in $(pwd)"
+
+Rscript --vanilla mainv.R
+
